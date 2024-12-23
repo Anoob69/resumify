@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Resumify</title>
+    {% load static %}
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f9fafb;
+            color: #1f2937;
+        }
+
+        header {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("{% static 'images/landing_bg.jpg' %}");
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 60px 10%;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+            line-height: 1.8;
+        }
+
+        .container {
+            padding: 40px 10%;
+            text-align: center;
+        }
+
+        .container h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #1f2937;
+        }
+
+        .container p {
+            font-size: 1.1rem;
+            color: #4b5563;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            margin: 10px;
+            background-color: #3b82f6;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #2563eb;
+            transform: translateY(-3px);
+        }
+
+        .testimonials {
+            background: #f3f4f6;
+            padding: 40px 10%;
+            margin-top: 40px;
+        }
+
+        .testimonials h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #1f2937;
+        }
+
+        .testimonial {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 20px;
+        }
+
+        .testimonial img {
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            margin-right: 20px;
+            border: 2px solid #3b82f6;
+        }
+
+        .testimonial p {
+            margin: 0;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #4b5563;
+        }
+
+        .testimonial span {
+            display: block;
+            font-weight: bold;
+            color: #1f2937;
+            margin-top: 5px;
+        }
+
+        footer {
+            background: #1f2937;
+            color: white;
+            text-align: center;
+            padding: 20px 10%;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #9ca3af;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Resumify</h1>
+        <p>
+            Your ultimate partner for crafting professional, ATS-friendly resumes that stand out.
+        </p>
+    </header>
+
+    <div class="container">
+        <h1>Create Job-Winning Resumes</h1>
+        <p>
+            Craft professional resumes that pass ATS scans and impress recruiters. Whether you're an experienced professional or a beginner, Resumify is your perfect companion!
+        </p>
+        <a href="{% url 'login' %}" class="btn">Login</a>
+    </div>
+
+    <div class="testimonials">
+        <h2>What Our Users Say</h2>
+        <div class="testimonial">
+            <img src="{% static 'images/woman.jpg' %}" alt="User photo">
+            <div>
+                <p>"Resumify made creating my resume so simple and professional. I landed my dream job within a month!"</p>
+                <span>- Samy, HR Specialist</span>
+            </div>
+        </div>
+        <div class="testimonial">
+            <img src="{% static 'images/whiteman.jpg' %}" alt="User photo">
+            <div>
+                <p>"I was struggling with my resume until I used Resumify. Highly recommended for anyone job searching!"</p>
+                <span>- Smith, Marketing Manager</span>
+            </div>
+        </div>
+        <div class="testimonial">
+            <img src="{% static 'images/chingchond.jpg' %}" alt="User photo">
+            <div>
+                <p>"This platform is so user-friendly and the templates are top-notch. A must-have for job seekers."</p>
+                <span>- Alex Lee, Data Scientist</span>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Resumify. All rights reserved.</p>
+    </footer>
+</body>
+</html>

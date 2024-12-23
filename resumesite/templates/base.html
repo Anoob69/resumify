@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Resume Builder{% endblock %}</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f9fafb;
+        }
+
+        header {
+            background: #1f2937; 
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            color: #ffffff;
+            font-size: 2rem;
+            margin: 0;
+            font-weight: bold;
+        }
+
+        main {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ATS-Friendly Resume Builder</h1>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>

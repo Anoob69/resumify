@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        /* CSS Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(120deg, #74b9ff, #81ecec);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .signup-container {
+            width: 100%;
+            max-width: 450px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .form-card {
+            background: #ffffff;
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-title {
+            text-align: center;
+            color: #2d3436;
+            font-size: 2em;
+            margin-bottom: 25px;
+            font-weight: bold;
+        }
+
+        form p {
+            margin-bottom: 10px;
+        }
+
+        label {
+            font-weight: 600;
+            color: #2d3436;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #dcdde1;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #74b9ff;
+            box-shadow: 0 0 5px rgba(116, 185, 255, 0.5);
+        }
+
+        .password-hints {
+            font-size: 0.9em;
+            color: #636e72;
+            margin-bottom: 20px;
+            padding-left: 10px;
+        }
+
+        .password-hints li {
+            margin-bottom: 5px;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 12px;
+            background-color: #0984e3;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-submit:hover {
+            background-color: #74b9ff;
+        }
+
+        .login-redirect {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.95em;
+        }
+
+        .login-redirect a {
+            color: #0984e3;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .login-redirect a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="signup-container">
+        <div class="form-card">
+            <h1 class="form-title">Sign Up</h1>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <ul class="password-hints">
+                    <li>Your password must be at least 8 characters long.</li>
+                    <li>It cannot be entirely numeric or too similar to your personal information.</li>
+                    <li>Choose a password that's hard to guess and unique to you.</li>
+                </ul>
+                <button type="submit" class="btn-submit">Sign Up</button>
+            </form>
+            <p class="login-redirect">
+                Already have an account? <a href="{% url 'login' %}">Log in here</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
